@@ -27,7 +27,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private LocationListener locationlistener; //variable to listen for location
     private LocationManager locationmanager; //variable to manage location
 
-    //Minimum time
+    //Minimum time 
     private final long MIN_TIME = 1000; //in miliseconds (1000ms = 1s)
 
     //Minimum distance
