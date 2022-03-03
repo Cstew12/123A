@@ -27,7 +27,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private LocationListener locationlistener; //variable to listen for location
     private LocationManager locationmanager; //variable to manage location
 
-    //Minimum time 
+    //Minimum time
     private final long MIN_TIME = 1000; //in miliseconds (1000ms = 1s)
 
     //Minimum distance
@@ -69,6 +69,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng sydney = new LatLng(-34, 151); //(latitude, longitude)
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney")); //displays string when marker is clicked
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney)); //move the map camera
+
 
         //checks for location
         locationlistener = new LocationListener() {
