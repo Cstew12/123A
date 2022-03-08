@@ -8,6 +8,12 @@
 //base of code is the strandwheel example
 //added comments and made some changes
 
+/* Only PWR +5V, GND, and Data Inut pins are used (no resistors used)
+ * PWR to 5V pin
+ * GND to GND
+ * Data Input to PIN # specified in "#define PIN _"
+ */
+
 //Download Adafruit Neopixel library from:  https://github.com/adafruit/Adafruit_NeoPixel
 
 // Parameter 1 = number of pixels in strip
@@ -39,10 +45,14 @@ void setup() {
 
 void loop() {
   // Some example procedures showing how to display to the pixels:
+  solidColor(strip.Color(0, 255, 0), 2000); //Solid Green for 2 seconds
+  delay(2000);
+  solidColor(strip.Color(255, 0, 0), 2000); //Solid Red for 2 seconds
+  
   colorWipe(strip.Color(255, 0, 0), 50); // Red
   colorWipe(strip.Color(0, 255, 0), 50); // Green
   colorWipe(strip.Color(0, 0, 255), 50); // Blue
-//colorWipe(strip.Color(0, 0, 0, 255), 50); // White RGBW
+  colorWipe(strip.Color(0, 0, 0, 255), 50); // White RGBW
   // Send a theater pixel chase in...
   theaterChase(strip.Color(127, 127, 127), 50); // White
   theaterChase(strip.Color(127, 0, 0), 50); // Red
@@ -51,6 +61,16 @@ void loop() {
   rainbow(20);
   rainbowCycle(20);
   theaterChaseRainbow(50);
+}
+
+
+//displays a solid color c for wait time (ms)
+void solidColor(uint32_t c, uint8_t wait) {
+  for(uint16_t i=0; i<strip.numPixels(); i++) {
+    strip.setPixelColor(i, c);
+    strip.show();
+  }
+  delay(wait);
 }
 
 // Fill the dots one after the other with a color
