@@ -1,3 +1,10 @@
+/*
+ * CSE 123A Group 8: Social Distancers
+ * Author: Terrence Ng
+ * Test: Individual Test: LED Ring
+ * Date: 3/7/2022
+ */
+
 #include <Adafruit_NeoPixel.h>
 #ifdef __AVR__
   #include <avr/power.h>
