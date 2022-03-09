@@ -1,3 +1,10 @@
+/*
+ * CSE 123A Group 8: Social Distancers
+ * Author: Terrence Ng
+ * Test: Maps Functionality Using Google API in Android Studio
+ * Date: 2/28/2022
+ */
+
 package com.example.socialdistanceapp;
 
 import androidx.annotation.NonNull;
