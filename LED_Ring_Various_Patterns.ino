@@ -16,7 +16,7 @@
 //added comments and made some changes
 
 /* Only PWR +5V, GND, and Data Inut pins are used (no resistors used)
- * PWR to 5V pin
+ * PWR to 5V pin or 3.3V pin
  * GND to GND
  * Data Input to PIN # specified in "#define PIN _"
  */
