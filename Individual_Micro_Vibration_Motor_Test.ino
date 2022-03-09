@@ -1,3 +1,10 @@
+/*
+ * CSE 123A Group 8: Social Distancers
+ * Author: Terrence Ng
+ * Test: Individual Test: Vibration Motor
+ * Date: 3/6/2022
+ */
+
 /* Vibration Motor
  * Power wire (Red) in pin 5
  * Ground wire (Blue) in GND (Ground)
