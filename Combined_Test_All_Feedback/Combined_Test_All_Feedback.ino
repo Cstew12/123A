@@ -1,14 +1,38 @@
+/* 
+ * CSE 123 Group 8: The Social Distancers
+ * Author: Maxwell Voorhes
+ * Test: Combined Test - All Feedbacks
+ * Date: 3/9/2022
+ */
+
+/* Pins
+ * 
+ * LED Pins
+ * Red: pin 3
+ * Green: pin 5
+ * Blue: pin 4
+ * 
+ * Ultrasonic pins
+ * Echo: pin 6
+ * Trig: pin 7
+ * 
+ * Speaker
+ * Signal: pin 9
+ * 
+ * Vibration motor: pin 10
+ */
+
 #include "pitches.h"
 
-int echo = 6;
-int trig = 7;
+const int echo = 6; // echo pin
+const int trig = 7; // trig pin
 
-int red_led_pin = 3;
-int green_led_pin = 5;
-int blue_led_pin = 4;
+const int red_led_pin = 3;    // Red pin
+const int green_led_pin = 5;  // Green pin
+const int blue_led_pin = 4;   // Blue pin
 
-int mvm = 10; // microvibration motor is connected with pin number 5 witch is the pwm pin
-int vresistor = A1; // potentiometer data pin is A1
+const int mvm = 10; // microvibration motor is connected with pin number 5 witch is the pwm pin
+const int vresistor = A1; // potentiometer data pin is A1
 int data = 0; // resistance initially starts at 0
 
 bool speak = 0;
@@ -16,15 +40,14 @@ bool speak = 0;
 int melody[] = {NOTE_D4, NOTE_D4, NOTE_D5, NOTE_A4, NOTE_GS4, NOTE_G4, NOTE_F4, NOTE_D4, NOTE_F4, NOTE_G4, END};
 int note_durations[] = {4, 4, 8, 12, 8, 8, 8, 4, 4, 4};
 
-int speed = 30;
-
+int speed = 30; // Speed of melody (higher num = longer)
 void setup() {
 
   pinMode(red_led_pin, OUTPUT);
   pinMode(green_led_pin, OUTPUT);
   pinMode(blue_led_pin, OUTPUT);
 
-  pinMode(mvm, OUTPUT); //vibration motor
+  pinMode(mvm, OUTPUT);
   
   pinMode(trig, OUTPUT);
   pinMode(echo, INPUT);
@@ -78,7 +101,7 @@ void loop() {
   // put your main code here, to run repeatedly:
   long duration, inches, cm;
 
-  // Write
+  // Write to ultrasonic
   digitalWrite(trig, LOW);
   delayMicroseconds(2);
   digitalWrite(trig, HIGH);
@@ -91,6 +114,7 @@ void loop() {
   inches = microsecondsToInches(duration);
   cm = microsecondsToCentimeters(duration);
 
+  // Determines test to run
   if (test == 1) {
     speaker_test(inches);
     RGB_color(0,0,0);
@@ -127,4 +151,3 @@ long microsecondsToCentimeters(long microseconds) {
 // https://maker.pro/arduino/projects/arduino-speaker
 // Anthonys LED Code
 // Terrences Vibration Code
-// Pretty much the same exact code
