@@ -1,7 +1,7 @@
 /*
  * CSE 123A Group 8: Social Distancers
  * Author: Terrence Ng
- * Test: Individual Test: Vibration Motor
+ * Description: Functions For the LED ring on the soial distance detectin device
  * Date: 4/14/2022
  */
 
@@ -13,7 +13,7 @@
 #define PIN 6 //Data Input
 
 #define GREEN strip.Color(0, 255, 0) // Green color for LED ring
-#define RED solidColor(strip.Color(255, 0, 0) // Red color for LED ring
+#define RED strip.Color(255, 0, 0) // Red color for LED ring
 
 /* Only PWR +5V, GND, and Data Inut pins are used (no resistors used)
  * PWR to 5V pin
