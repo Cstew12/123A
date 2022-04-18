@@ -1,0 +1,6 @@
+module Pods_SocialDistancers_SocialDistancersTests {
+  umbrella header "Pods-SocialDistancers-SocialDistancersTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

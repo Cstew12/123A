@@ -1,0 +1,6 @@
+module Pods_SocialDistancers {
+  umbrella header "Pods-SocialDistancers-umbrella.h"
+
+  export *
+  module * { export * }
+}
