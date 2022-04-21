@@ -1,6 +1,3 @@
-long interval = 250; 
-long previousMillis = 0;
-int ledState = HIGH;
 
 void LED_Output_blink(){
   //blinks LED based on previous state and current time

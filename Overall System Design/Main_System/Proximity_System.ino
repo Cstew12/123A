@@ -1,9 +1,7 @@
-#define POTENTIOMETER_PIN A0
 
 void setupProximitySystem(){
   //setup code for pins, etc.
 }
-
 
 double getProximity(){
   //reads signal from serial input I2C or UART and returns the double value.
