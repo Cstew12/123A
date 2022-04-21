@@ -16,17 +16,6 @@
 int current_level = 0; //current vibration level
 int last_level = LEVEL_5; //last known non zero vibration level
 
-/*
-void setup() {
-  pinMode(MOTOR, OUTPUT); //setup vibration motor pins
-}
-*/
-
-/*
-void loop() {
-  analogWrite(MOTOR, data); //vibrate MOTOR at specified data level
-*/
-
 //vibrates the vibration motors at the specified current level (global variable)
 void triggerHaptic() {
   current_level = last_level; //set vibration to last level
@@ -40,19 +29,15 @@ void initialize_vibration() {
 
 //turn off vibration 
 //save last vibration level
-void vibrationOFF() {
+void Haptic_Output_killHaptic() {
    last_level = current_level; //save current vibration level
    current_level = OFF; //turn off 
    analogWrite(MOTOR, OFF); //dont send any power to the vibration motor
 }
 
-//turn on vibratrion (level is same as last known vibration)
-//void vibrationON() {
-//   current_level = last_level; //set vibration to last level
-//}
-
 //change vibration amount to level
 //should be one of the predefined vibration levels
-void setVibLevel(int level) {
-  current_level = level;
+void set_hapticIntensity(int hapticIntensity){
+  //sets global variable to Haptic intensity
+  gbl_hapticIntensity = hapticIntensity;
 }

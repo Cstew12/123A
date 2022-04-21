@@ -59,14 +59,14 @@ void triggerLed() {
 }
 
 //turns off all pixels on the LED Ring
-void ledOFF() {
+void LED_Output_killLED() {
   strip.clear();
 }
 
 //turns on all pixels on the LED Ring
-void ledON() {
-  strip.show();
-}
+//void ledON() {
+//  strip.show();
+//}
 
 //displays a solid color c for time wait (ms)
 void solidColor(uint32_t c, uint8_t wait) {
