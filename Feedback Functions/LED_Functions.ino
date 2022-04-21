@@ -31,30 +31,29 @@
 //   NEO_RGBW    Pixels are wired for RGBW bitstream (NeoPixel RGBW products)
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(24, PIN, NEO_GRB + NEO_KHZ800);
 
-
+/*
 void setup() { 
   strip.begin(); 
   strip.setBrightness(50); //(0 to 255) (0 = dim) (255 = brightest)
   strip.show(); // Initialize all pixels to 'on'
 }
-
-
-/*
-void loop() {
-  
-}
 */
+
+//initialization for LED ring
+void initialize_LED() {
+  strip.begin();
+  strip.setBrightness(50); //(0 to 255) (0 = dim) (255 = brightest)
+  strip.show(); //initialize all pixels to "on"
+}
 
 
 //displays green when at a safe distance (>= 6ft)
 //displays red if not at a safe distance (< 6ft)
-//displays flashing red if distance is at a really unsafe distance (< 3 ft)
-void runLED(bool safe, int distance) {
-  if(safe) { //more than 6 feet
-    solidColor(GREEN, 2000);
-  } else if (distance < 3){ //less than 3 feet
-    flashCircle(RED, 50); 
-  } else { //less than 6 feet (but more than 3)
+//safe is a global variable boolean
+void triggerLed() {
+  if(safe) { //more than 6 feet 
+    solidColor(GREEN, 2000); 
+  } else { //less than 6 feet 
     solidColor(RED, 2000);
   }
 }
