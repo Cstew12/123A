@@ -19,8 +19,8 @@ const LoginScreen = () => {
             style={styles.image1}
           />
   
-          <Text style={styles.titleText}>Social Distancers</Text>
-  
+          {//<Text style={styles.titleText}>Social Distancers</Text>}
+          }
           <Text style={styles.quoteText}>Keeping the World Safe!</Text>
         </View>
           
@@ -33,12 +33,12 @@ const LoginScreen = () => {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#2e2d2d",
+      backgroundColor: "#F2EEE4",
       alignItems: "center",
       justifyContent: "center",
     },
     item: {
-      backgroundColor: "#f9c2ff",
+      backgroundColor: "#F2EEE4",
       padding: 20,
       marginVertical: 8,
       marginHorizontal: 16,
@@ -48,12 +48,12 @@ const LoginScreen = () => {
     },
     headerFlex: {
       flex: 3.4,
-      backgroundColor: "#2e2d2d",
+      backgroundColor: "#F2EEE4",
       justifyContent: "flex-end",
       alignItems: "center",
     },
   
-    loginFlex: {
+    /*loginFlex: {
       flex: 3,
       backgroundColor: "#2e2d2d",
       justifyContent: "center",
@@ -63,7 +63,7 @@ const LoginScreen = () => {
       flex: 1,
       backgroundColor: "#2e2d2d",
       justifyContent: "flex-start",
-    },
+    },*/
   
     smallText: {
       fontSize: 12,
@@ -72,25 +72,25 @@ const LoginScreen = () => {
       marginLeft: 0,
     },
   
-    titleText: {
+    /*titleText: {
       fontSize: 50,
       color: "#82f591",
       fontFamily: "AvenirNext-Bold",
       marginBottom: -10,
-    },
+    },*/
   
     quoteText: {
       fontSize: 12,
-      color: "#9c9c9c",
+      color: "#5065A8",
       fontFamily: "AvenirNext-Bold",
-      marginTop: 5,
+      marginBottom: 50,
     },
   
     image1: {
-      width: 160,
+      width: 500,
       height: 250,
-      marginBottom: -20,
-      marginLeft: -22,
+      marginBottom: 550,
+      marginLeft: 0,
     },
   });
   
