@@ -32,14 +32,20 @@ void loop_song() {
 }
 
 void beep() {
-  tone(SOUND_PIN, NOTE_B5, 100);
+//  tone(SOUND_PIN, NOTE_B5, 100);
+//  delay(100);
+//  noTone(SOUND_PIN);
+
+  analogWrite(SOUND_PIN, 128);
   delay(100);
-  noTone(SOUND_PIN);
+  analogWrite(SOUND_PIN, 255);
+
 }
 
 void setup() {
+  pinMode(SOUND_PIN, OUTPUT);
   Serial.begin(9600);
-  loop_song();
+//  loop_song();
 }
 
 void loop() {
