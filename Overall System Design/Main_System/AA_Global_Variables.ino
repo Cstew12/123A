@@ -36,17 +36,22 @@ int ledState = HIGH;      //Initilizes first LED State
 
 ///////////////////////////////////////////////////////////////
 
+
 //HAPTIC GLOBAL VARIABLES
 
 #define MOTOR 5 //Vibration motor pin
+
 #define OFF 0 //No vibration at all
-#define LEVEL_1 50 //20% vibration level
-#define LEVEL_2 100 //40% vibration level
-#define LEVEL_3 150 //60% vibration level
-#define LEVEL_4 200 //80% vibration level
-#define LEVEL_5 255 //100% (Max) vibration level
 
 ///////////////////////////////////////////////////////////////
+
+
+//HAPTIC SOUND VARIABLES
+
+#define SOUND_PIN 4
+
+///////////////////////////////////////////////////////////////
+
 
 //PROXIMITY GLOBAL VARIABLES
 

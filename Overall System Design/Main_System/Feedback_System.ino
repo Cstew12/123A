@@ -12,6 +12,7 @@ void setupFeedbackSystem(){
   //setup code for pins, etc.
   initialize_LED();
   initilize_Haptic();
+  initialize_Sound();
 }
 
 void initilizeDefaultFeedbackSystem(){
@@ -22,7 +23,7 @@ void initilizeDefaultFeedbackSystem(){
   gbl_soundVol = 7;         //Default: Sound Vol 7 out of 10
   gbl_soundMode = 1;        //Default: Sound preset 1
   gbl_hapticPwr = true;     //Default: Haptic On
-  gbl_hapticIntensity =1;  //Default: Haptic Full Intensity
+  gbl_hapticIntensity = 3;  //Default: Haptic Full Intensity
   gbl_hapticMode = 3;       //Default: Haptic High Alert (3)
 }
 
@@ -52,8 +53,8 @@ void killFeedback(){
   //turns off all feedback devices
   LED_Output_continuous(GREEN);
   //LED_Output_killLED();
-  //Sound_Output_killSound;
   Haptic_Output_kill();
+  Sound_Output_kill();
 }
 
 void triggerLed(){
@@ -73,7 +74,7 @@ void triggerLed(){
 
 void triggerSound(){
   //turns on speaker to specified volume with preset sound
-  
+  beep();
 }
 
 void triggerHaptic(){

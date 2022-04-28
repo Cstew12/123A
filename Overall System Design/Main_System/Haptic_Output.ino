@@ -9,15 +9,15 @@ void Haptic_Output_kill(){
 }
 
 int get_haptic_level(){
-  if(gbl_hapticIntensity <= 0)
+  if(gbl_hapticIntensity <= 1)
   {
     return 100;
   }
-  else if(gbl_hapticIntensity <= 0)
+  else if(gbl_hapticIntensity <= 2)
   {
     return 170;
   }
-  else if(gbl_hapticIntensity <= 0)
+  else if(gbl_hapticIntensity <= 3)
   {
     return 255;
   }
