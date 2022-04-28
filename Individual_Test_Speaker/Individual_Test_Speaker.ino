@@ -31,6 +31,12 @@ void loop_song() {
   index++;
 }
 
+void beep() {
+  tone(SOUND_PIN, NOTE_B5, 100);
+  delay(100);
+  noTone(SOUND_PIN);
+}
+
 void setup() {
   Serial.begin(9600);
   loop_song();
