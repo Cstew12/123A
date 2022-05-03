@@ -1,11 +1,13 @@
-#include <SoftwareSerial.h>
+//#include <SoftwareSerial.h>
 #include <RingBuf.h>
 
-SoftwareSerial portOne (7, 8); //(Rx, Tx)
+//SoftwareSerial portOne (7, 8); //(Rx, Tx)
 
 void setupProximitySystem(){
   //setup code for pins, etc.
-  portOne.begin(115200);
+  //portOne.begin(115200);
+  Serial1.begin(115200);
+  //Serial.begin(115200);
 }
 
 //obtains average of current (buffer size) distance readings 
@@ -40,7 +42,8 @@ float getProximity(){
   //double distance;
   //distance = test_potDistance();
 
-  line = portOne.readStringUntil('\n');
+  //line = portOne.readStringUntil('\n');
+  line = Serial1.readStringUntil('\n');
   place = line.indexOf("Distance : ");
   if(place == 0){
     distance_read = (line.substring(11, 19)).toFloat();

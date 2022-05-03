@@ -25,4 +25,5 @@ int get_haptic_level(){
 
 void triggerHaptic_HIGH(){
   analogWrite(MOTOR, get_haptic_level());
+  //digitalWrite(MOTOR, HIGH);
 }

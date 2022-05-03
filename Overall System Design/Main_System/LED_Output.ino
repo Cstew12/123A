@@ -54,6 +54,7 @@ void LED_Output_blink(){
   
 }
 
+
 void LED_Output_continuous(uint32_t c){
   //Continuously sets LED Output to On
   //Serial.println("continuous\n");

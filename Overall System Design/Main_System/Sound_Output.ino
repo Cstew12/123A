@@ -10,13 +10,14 @@ int melody_3[] = {NOTE_C8, NOTE_CS2};
 int note_durations_3[] = {4, 4};
 
 int speed = 20;
-int index = 0;
+//int index = 0;
 int length = 2;
 
 void initialize_Sound() {
-  
+//  pinMode(SOUND_PIN, OUTPUT);
 }
 
+/*
 //plays a song
 void loop_song() {
 
@@ -33,6 +34,7 @@ void loop_song() {
   noTone(SOUND_PIN);
   index++;
 }
+*/
 
 //plays a beep
 void beep() {

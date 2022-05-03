@@ -2,6 +2,8 @@
 
 ///////////////////////////////////////////////////////////////
 
+//POWER NEEDS TO BE 3.3V ON NANO BLE 33
+
 //Global Variables for Feedback Systems
 
 bool gbl_ledPwr;          // on/off
@@ -21,9 +23,9 @@ int gbl_hapticMode;       // 1: low, 2: med, 3: high
 
 //LED GBL VARS
 
-#define LED_PIN 6
+#define LED_PIN D10 //(pin 13 (D10) on nano, 6 on UNO)
 
-#define SINGLE_LED_PIN 12
+#define SINGLE_LED_PIN 22
 
 //LED_Output GLOBAL VARIABLES
 
@@ -39,16 +41,16 @@ int ledState = HIGH;      //Initilizes first LED State
 
 //HAPTIC GLOBAL VARIABLES
 
-#define MOTOR 5 //Vibration motor pin
+#define MOTOR D3 //Vibration motor pin (6 (D3) on nano, 5 on UNO)
 
 #define OFF 0 //No vibration at all
 
 ///////////////////////////////////////////////////////////////
 
 
-//HAPTIC SOUND VARIABLES
+//SOUND GLOBAL VARIABLES
 
-#define SOUND_PIN 4
+#define SOUND_PIN D8 //Sound pin (11 (D8) on nano, 4 on UNO)
 
 ///////////////////////////////////////////////////////////////
 
@@ -62,6 +64,6 @@ String line;
 size_t place;
 float distance_inches;
 
-RingBuf<float, 100> myRingBuffer;
+RingBuf<float, 10> myRingBuffer;
 
 #define POTENTIOMETER_PIN A0
