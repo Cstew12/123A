@@ -36,7 +36,9 @@ void triggerFeedbackSystem(bool trigger){
     }
     if(gbl_soundPwr){
       //if sound power setting is on
-      triggerSound();
+      if(silentMode == 0) {
+        triggerSound();
+      }
     }
     if(gbl_hapticPwr){
       //if haptic power setting is on

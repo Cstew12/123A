@@ -24,6 +24,8 @@ int gbl_hapticMode;       // 1: low, 2: med, 3: high
 
 //BLE GBL VARS
 #define BATTERY_PIN A0
+int32_t silentMode = 0;
+//int32_t volume = 10;
 
 
 ////////////////////////////////////////////////////////////////
@@ -60,6 +62,7 @@ int ledState = HIGH;      //Initilizes first LED State
 //SOUND GLOBAL VARIABLES
 
 #define SOUND_PIN D8 //Sound pin (11 (D8) on nano, 4 on UNO)
+int volume = 255;
 
 ///////////////////////////////////////////////////////////////
 

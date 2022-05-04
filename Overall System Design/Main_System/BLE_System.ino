@@ -11,11 +11,11 @@ BLEService SETTINGS_SERVICE("1102");
 BLEUnsignedIntCharacteristic distanceIntChar("2101", BLERead | BLENotify); // Real time value
 BLEUnsignedCharCharacteristic batteryLevelChar("2102", BLERead | BLENotify); // Real time value
 BLEUnsignedIntCharacteristic silentModeChar("2103", BLEWrite); // Setting
-BLEUnsignedIntCharacteristic volumeChar("2104", BLEWrite); // Setting
+//BLEUnsignedIntCharacteristic volumeChar("2104", BLEWrite); // Setting
 
 // Initializing the settings of the device.
-int32_t silentMode = OFF;
-int32_t volume = 10;
+//int32_t silentMode = OFF;
+//int32_t volume = 10;
 
 
 void setupBLESystem() {
@@ -30,7 +30,7 @@ void setupBLESystem() {
   VALUES_SERVICE.addCharacteristic(distanceIntChar);
   VALUES_SERVICE.addCharacteristic(batteryLevelChar);
   SETTINGS_SERVICE.addCharacteristic(silentModeChar);
-  SETTINGS_SERVICE.addCharacteristic(volumeChar);
+  //SETTINGS_SERVICE.addCharacteristic(volumeChar);
   BLE.addService(VALUES_SERVICE);
   BLE.addService(SETTINGS_SERVICE);
 
@@ -58,7 +58,7 @@ void getInfo(int distance) {
       silentModeChar.readValue(silentMode);
   
       // Read the volume level and store it in a variable.
-      volumeChar.readValue(volume);
+      //volumeChar.readValue(volume);
     }
   }
 }
