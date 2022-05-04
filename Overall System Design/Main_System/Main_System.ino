@@ -5,13 +5,17 @@ void setup() {
   setupFeedbackSystem();
   initilizeDefaultFeedbackSystem();
   setupProximitySystem();
+  setupBLESystem();
   Serial.begin(115200);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   float distance = getProximity();
-  //int test = getBatteryLife();
+
+  //send info to phone if connected to bluetooth
+  getInfo(distance);
+  
   //double distance = 72; //72 inches = 6 feet
   Serial.println(distance);
   if(distance <= 72){

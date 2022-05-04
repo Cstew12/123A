@@ -21,6 +21,14 @@ int gbl_hapticMode;       // 1: low, 2: med, 3: high
 
 ////////////////////////////////////////////////////////////////
 
+
+//BLE GBL VARS
+#define BATTERY_PIN A0
+
+
+////////////////////////////////////////////////////////////////
+
+
 //LED GBL VARS
 
 #define LED_PIN D10 //(pin 13 (D10) on nano, 6 on UNO)
@@ -35,6 +43,7 @@ int gbl_hapticMode;       // 1: low, 2: med, 3: high
 long interval = 250;      //Initilizes blink interval
 long previousMillis = 0;  //Initilizes previous time stamp
 int ledState = HIGH;      //Initilizes first LED State
+
 
 ///////////////////////////////////////////////////////////////
 
