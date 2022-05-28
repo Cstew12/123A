@@ -1,7 +1,7 @@
 void setup() {
   // put your setup code here, to run once:
   setupFeedbackSystem();
-  initilizeFeedbackSystem();
+  initilizeDefaultFeedbackSystem();
   Serial.begin(9600);
 }
 

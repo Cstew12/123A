@@ -1,35 +1,27 @@
-//Global Defines
-#define LED_PIN 13
 
+#include <Adafruit_NeoPixel.h>
+#ifdef __AVR__
+  #include <avr/power.h>
+#endif
 
-//Global Variables for Feedback Systems
-bool gbl_ledPwr;          // on/off
-int gbl_ledMode;          // 1:blink 2:continuous
-bool gbl_soundPwr;        // on/off
-int gbl_soundVol;         // volume: 1-10
-int gbl_soundMode;        // 1:preset1, 2:preset2, etc.
-bool gbl_hapticPwr;       // on/off
-int gbl_hapticIntensity;  // intensity: 1-5
-int gbl_hapticMode;       // 1: low, 2: med, 3: high
-                          // low: Waits 5 seconds when triggered to turn on, stays on for 5 seconds, then turns off.
-                          // med: Waits 3 seconds when triggered to turn on, alternate on and off for 5 seconds each until triggered off
-                          // high: Immediately turns on when triggered and stays on until out triggered off
+//LED strip declaration
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(24, LED_PIN, NEO_GRB + NEO_KHZ800);
 
 void setupFeedbackSystem(){
   //setup code for pins, etc.
-  pinMode(LED_PIN, OUTPUT);
-  
+  initialize_LED();
+  initilize_Haptic();
 }
 
-void initilizeFeedbackSystem(){
+void initilizeDefaultFeedbackSystem(){
   //initilize feedback system to default settings (everything on, full intensity)
   gbl_ledPwr = true;        //Default: LED On
-  gbl_ledMode = 1;          //Default: LED Blinking
+  gbl_ledMode = 2;          //Default: LED Continuous
   gbl_soundPwr = true;      //Default: Sound On
   gbl_soundVol = 7;         //Default: Sound Vol 7 out of 10
   gbl_soundMode = 1;        //Default: Sound preset 1
   gbl_hapticPwr = true;     //Default: Haptic On
-  gbl_hapticIntensity = 5;  //Default: Haptic Full Intensity
+  gbl_hapticIntensity =1;  //Default: Haptic Full Intensity
   gbl_hapticMode = 3;       //Default: Haptic High Alert (3)
 }
 
@@ -53,14 +45,14 @@ void triggerFeedbackSystem(bool trigger){
     //if feedback devices are untriggered
     killFeedback();
   }
-  
 }
 
 void killFeedback(){
   //turns off all feedback devices
-  LED_Output_killLED();
+  LED_Output_continuous(GREEN);
+  //LED_Output_killLED();
   //Sound_Output_killSound;
-  //Haptic_Output_killHaptic;
+  Haptic_Output_kill();
 }
 
 void triggerLed(){
@@ -71,7 +63,7 @@ void triggerLed(){
   }
   else if(gbl_ledMode == 2){
     //continuous LED
-    LED_Output_continuous();
+    LED_Output_continuous(RED);
   }
   else{
     //led mode invalid: throw error
@@ -85,7 +77,7 @@ void triggerSound(){
 
 void triggerHaptic(){
   //turns on haptic device to specified intensity and mode
-  
+  triggerHaptic_HIGH();
 }
 
 //All below functions set global feedback settings
